@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Kalkulator</title>
+  <style>
+    body {
+      background-image: linear-gradient(to right, #0000FF, #FFFFFF);
+      font-family: sans-serif;
+    }
+
+    .kalkulator {
+      width: 300px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .kalkulator input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #CCC;
+    }
+
+    .kalkulator button {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      background-color: #0000FF;
+      color: #FFFFFF;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="kalkulator">
+    <h1>Kalkulator</h1>
+    <input type="number" id="angka1" placeholder="Angka pertama">
+    <input type="number" id="angka2" placeholder="Angka kedua">
+    <select id="operasi">
+      <option value="+">+</option>
+      <option value="-">-</option>
+      <option value="*">*</option>
+      <option value="/">/</option>
+    </select>
+    <button type="button" id="hitung">Hitung</button>
+    <p id="hasil"></p>
+  </div>
+
+  <script>
+    document.getElementById("hitung").addEventListener("click", function() {
+      var angka1 = parseInt(document.getElementById("angka1").value);
+      var angka2 = parseInt(document.getElementById("angka2").value);
+      var operasi = document.getElementById("operasi").value;
+
+      var hasil;
+      switch (operasi) {
+        case "+":
+          hasil = angka1 + angka2;
+          break;
+        case "-":
+          hasil = angka1 - angka2;
+          break;
+        case "*":
+          hasil = angka1 * angka2;
+          break;
+        case "/":
+          hasil = angka1 / angka2;
+          break;
+      }
+
+      document.getElementById("hasil").innerHTML = hasil;
+    });
+  </script>
+</body>
+</html>
